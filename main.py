@@ -5,6 +5,9 @@ import uuid #to produce distinct ids
 
 app = Flask(__name__)
 
+@app.route("/") #homepage
+
+
 @app.route('/api/reminders', methods=['GET']) #only support HTTP GET method
 def get_reminders():
     reminders = read_reminder_json()
@@ -54,4 +57,4 @@ def not_found(error):
     return jsonify({'error': 'Not Found'}), 404
 
 if __name__ == '__main__':
-    app.run(port=8000, debug=True)
+    app.run(port=8000)
